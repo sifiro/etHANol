@@ -144,7 +144,7 @@ function triggerX()
 		showResult(hr+"<h2><b><span style='color:#000000;'>Copying files...</span></b></h2>");
 		disable_all();
 		setTimeout(trigger,1000,jump_1_addr);
-		setTimeout(rop_exit_2val,2000,hr+"<h1><b><font color=%22386E38%22>HAN Copier</font></b></h1><h2><b><span style='color:#000000;'>Files were successfully copied!</span></b></h2>",hr+"<h1><b><font color='red'>HAN Copier failed!</font></b></h1><h3><b><span style='color:#000000;'>Error copying file(s):</span></b></h3>","<h3><b><span style='color:#000000;'>"+getactPath().substr(4,0xC)+act+"</span></b></h3>","<h3><b><span style='color:#000000;'>"+getactPath().substr(4,0xC)+getRifValue()+"</span></b></h3>");
+		setTimeout(rop_exit_2val,2000,hr+"<h1><b><font color=%22386E38%22>HAN Copier</font></b></h1><h2><b><span style='color:#000000;'>Files were successfully copied!</span></b></h2>",hr+"<h1><b><font color='red'>HAN Copier failed!</font></b></h1><h3><b><span style='color:#000000;'>Error copying file(s):</span></b></h3>","<h3><b><span style='color:#000000;'>"+getactPath().substr(4,0xC)+act+"</span></b></h3>","<h3><b><span style='color:#000000;'>"+getactPath().substr(4,0xC)+getRif<%= rifname %>()+"</span></b></h3>");
 		cleanGUI();
 }
 </script>
@@ -159,7 +159,7 @@ function triggerX()
 	<hr></div>
 	<p><span style="color:#000000">USB Root Path </span><select id="comboactPath" name="actPath" size="1" onChange="selectfilePath()">
 	<option id="path_0" selected="selected" value="xxxx/dev_usb000/act.dat">/dev_usb000</option><option id="path_1" value="xxxx/dev_usb001/act.dat">/dev_usb001</option><option id="path_2" value="xxxx/dev_usb006/act.dat">/dev_usb006</option>
-	</select> | RIF File Name <input type="text" name="rif_file" id="txtrif" size="40" value="XXXXXX-XXXXXXXXX_XX-XXXXXXXXXXXXXXXX.rif"> | Auto-Close Browser <input type="checkbox" id="auto_close" name="aclose" checked="checked" onclick="autoclose();"/><span id="dex_txt" style="visibility:hidden"> | DEX mode<input type="checkbox" id="dex" name="DEX" disabled="" onclick="dex();"/></span></p>
+	</select> | RIF File Name <input type="text" name="rif_file" id="txtrif" size="40" value="<%= rifname %>.rif"> | Auto-Close Browser <input type="checkbox" id="auto_close" name="aclose" checked="checked" onclick="autoclose();"/><span id="dex_txt" style="visibility:hidden"> | DEX mode<input type="checkbox" id="dex" name="DEX" disabled="" onclick="dex();"/></span></p>
 	<p><button id="btnROP" type="button" onclick="initROP(true);" autofocus>Initialize ACT/RIF Copier</button> | <button id="btnTrigger" disabled="" type="button" onclick="triggerX();">Copy Files</button><span id="reset" style="visibility:hidden"> | <button id="btnReset" type="button" onclick="disable_trigger();">Reset</button></span></p>
 	<div id="result" style="color:#CC2010"></div><br>
 	<div id="log"></div>
